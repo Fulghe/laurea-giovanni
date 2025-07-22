@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accedi - Laurea di Giovanni</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container text-center p-4">
+
+  <!-- IMMAGINE FESTA -->
+  <img src="{{ url_for('static', filename='img/cartoon_tesi.png') }}"
+       alt="Laurea di Giovanni" class="img-fluid rounded shadow mb-4" style="max-width: 250px;">
+
+  <h2>Benvenuto nell'applicazione personalizzata della laurea di Giovi!🎓</h2>
+  <p>Inserisci un nickname per partecipare:</p>
+
+  <form method="POST" class="d-flex justify-content-center flex-column align-items-center">
+    <div class="mb-3 w-50">
+      <input type="text" name="nickname" class="form-control" placeholder="Es. GiovanniFulgheri" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Entra</button>
+  </form>
+
+</body>
+</html>

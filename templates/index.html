@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laurea di Giovanni</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+  <body class="bg-light text-center p-4">
+  <h1 class="display-5 fw-bold text-primary">🎓 Ciao {{ nickname }}!</h1>
+  <p class="lead">Benvenuto alla festa di Giovi!<br>
+    Carica una foto, partecipa al quiz, vota, lascia una dedica o guarda la galleria.<br>
+    Non dimenticare di firmare la tesi o scrivere una dedica ❤️
+  </p>
+
+  <div class="d-flex flex-wrap justify-content-center my-4 gap-3">
+
+    <a href="/upload" class="btn btn-primary btn-lg">📸 Carica una foto</a>
+    <a href="/dedica" class="btn btn-warning btn-lg text-dark">📝 Lascia una dedica</a>
+    <a href="/gallery" class="btn btn-success btn-lg">🖼️ Galleria</a>
+
+    {% if not quiz_done %}
+      <a href="/quiz" class="btn btn-info btn-lg text-white">🧠 Quiz</a>
+    {% else %}
+      <p class="text-muted w-100 mt-2">Hai già partecipato al quiz ✅</p>
+    {% endif %}
+
+    <a href="/vota" class="btn btn-outline-primary btn-lg">🗳️ Vota i partecipanti</a>
+    <a href="/classifica" class="btn btn-outline-dark btn-lg">📊 Classifica quiz</a>
+    <a href="/voti" class="btn btn-outline-secondary btn-lg">📋 Classifica voti</a>
+    {% if nickname == 'giovifabat0321admin' %}
+  <a href="/admin" class="btn btn-outline-danger m-2">🔐 Area Admin</a>
+{% endif %}
+
+  </div>
+
+  <a href="/logout" class="btn btn-sm btn-danger">🚪 Esci</a>
+</body>
+
+</html>
